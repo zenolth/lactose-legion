@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfgp7xvfr2sm"]
+
+[ext_resource type="Material" uid="uid://2sqkexiqfvkm" path="res://resources/materials/bullet_hole_material.tres" id="1_h6538"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2l2lc"]
+radial_segments = 6
+rings = 3
+
+[node name="BulletHole" type="MeshInstance3D"]
+transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, 0, 0, 0)
+material_override = ExtResource("1_h6538")
+mesh = SubResource("SphereMesh_2l2lc")

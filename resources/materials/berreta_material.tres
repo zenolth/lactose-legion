@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dc2p8jqy075jv"]
+
+[ext_resource type="Shader" path="res://resources/shaders/viewmodel_shader.gdshader" id="1_no640"]
+[ext_resource type="Texture2D" uid="uid://devwx7qk26t61" path="res://resources/textures/BarettaText.jpg" id="2_jaxdh"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_no640")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_jaxdh")

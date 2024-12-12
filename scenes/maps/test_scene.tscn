@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlxx37ru5bm87"]
+
+[ext_resource type="PackedScene" uid="uid://dxw7cledbpiia" path="res://addons/proto-csgs/proto_csg_box_3d.tscn" id="1_05ali"]
+[ext_resource type="Texture2D" uid="uid://c1svv8rwxctu1" path="res://resources/textures/sky_textures/satara_night_1k.exr" id="1_56pbr"]
+[ext_resource type="Texture2D" uid="uid://cej3yoosomfd2" path="res://addons/proto-csgs/textures/dark/texture_13.png" id="2_r0jal"]
+[ext_resource type="PackedScene" uid="uid://jaetd70sia2l" path="res://scenes/prefabs/player.tscn" id="3_xqxtm"]
+[ext_resource type="PackedScene" uid="uid://3cyxo7uglbg2" path="res://scenes/prefabs/buildings/building_1.tscn" id="4_780ey"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_q57d4"]
+panorama = ExtResource("1_56pbr")
+energy_multiplier = 0.01
+
+[sub_resource type="Sky" id="Sky_sch8v"]
+sky_material = SubResource("PanoramaSkyMaterial_q57d4")
+
+[sub_resource type="Environment" id="Environment_6f7i3"]
+background_mode = 2
+background_energy_multiplier = 7.4
+sky = SubResource("Sky_sch8v")
+tonemap_mode = 2
+glow_enabled = true
+adjustment_enabled = true
+adjustment_contrast = 1.1
+adjustment_saturation = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey45r"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_r0jal")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[node name="TestScene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6f7i3")
+
+[node name="ProtoCSGBox3D" parent="." instance=ExtResource("1_05ali")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000499994, 0)
+size = Vector3(100, 0.001, 100)
+material = SubResource("StandardMaterial3D_ey45r")
+
+[node name="Player" parent="." instance=ExtResource("3_xqxtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0.5)
+
+[node name="Building1" parent="." instance=ExtResource("4_780ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 12.5, -11)
+size = Vector3(10, 25, 10)
+
+[node name="Building2" parent="." instance=ExtResource("4_780ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 12.5, -11)
+size = Vector3(10, 25, 10)
+
+[node name="Building3" parent="." instance=ExtResource("4_780ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12.5, -11)
+size = Vector3(10, 25, 10)
+
+[node name="Building4" parent="." instance=ExtResource("4_780ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 12.5, -11)
+size = Vector3(10, 25, 10)
+
+[node name="Building5" parent="." instance=ExtResource("4_780ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 12.5, -11)
+size = Vector3(10, 25, 10)

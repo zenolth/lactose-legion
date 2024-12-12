@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dt6gwvesjfbe7"]
+
+[ext_resource type="Shader" path="res://resources/shaders/viewmodel_shader.gdshader" id="1_hhds8"]
+[ext_resource type="Texture2D" uid="uid://54gj8bax076x" path="res://resources/textures/PAShotgunText.png" id="2_ss1ox"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hhds8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_ss1ox")
